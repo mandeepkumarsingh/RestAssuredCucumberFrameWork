@@ -1,0 +1,380 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-05-23T18:19:49.155Z",
+        "line": 15,
+        "name": "verify order getting placed or not",
+        "description": "",
+        "id": "order-placement-flow;verify-order-getting-placed-or-not;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 9354000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Product of \"single_vision\" and Product id \"133015\"  and package \"58a29608e4b0861d59419617\" and User \"lenskart.test52@gmail.com\" and password \"valyoo123\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"single_vision\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"133015\"",
+                  "offset": 42
+                },
+                {
+                  "val": "\"58a29608e4b0861d59419617\"",
+                  "offset": 64
+                },
+                {
+                  "val": "\"lenskart.test52@gmail.com\"",
+                  "offset": 100
+                },
+                {
+                  "val": "\"valyoo123\"",
+                  "offset": 141
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.product_of_and_Product_id_and_package_and_User_and_password(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1313000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user calls \"orderpayment\" with http \"Post\" request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"orderpayment\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Post\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.user_calls_with_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Api Call got sucess with status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.api_Call_got_sucess_with_status_code(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 30000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "\"status\" in response body is \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"status\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"200\"",
+                  "offset": 29
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 19000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Print Orderid in the file \"single_vision\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"single_vision\"",
+                  "offset": 26
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.print_Orderid_in_the_file(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Order Placement Flow",
+    "description": "",
+    "id": "order-placement-flow",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/Features/PlaceOrder.feature",
+    "tags": []
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2020-05-23T18:19:59.927Z",
+        "line": 16,
+        "name": "verify User got registered Sucessfully using regiter Api",
+        "description": "",
+        "id": "user-signup-flow;verify-user-got-registered-sucessfully-using-regiter-api;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 614000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "register Api payload with \"Test\" \"User\" \"9111111009\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Test\"",
+                  "offset": 26
+                },
+                {
+                  "val": "\"User\"",
+                  "offset": 33
+                },
+                {
+                  "val": "\"9111111009\"",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.register_Api_payload_with(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 619000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user calls \"regiterApi\" with http \"Post\" request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"regiterApi\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Post\"",
+                  "offset": 34
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.user_calls_with_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Api Call got sucess with status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.api_Call_got_sucess_with_status_code(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "\"status\" in response body is \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"status\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"200\"",
+                  "offset": 29
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1499000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "verify login with \"9111111009\" using \"authenticate\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"9111111009\"",
+                  "offset": 18
+                },
+                {
+                  "val": "\"authenticate\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.verify_login_with_using(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@registerUser"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-05-23T18:20:02.673Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 20,
+        "name": "verify User got deleted sucessfully using Delete Api",
+        "description": "",
+        "id": "user-signup-flow;verify-user-got-deleted-sucessfully-using-delete-api",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 597000000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "removeAccount Api payload with \"9111111009@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"9111111009@gmail.com\"",
+                  "offset": 31
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.removeaccount_Api_payload_with(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1842000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "user calls \"removeAccount\" with http \"Post\" request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"removeAccount\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Post\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.user_calls_with_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "Api Call got sucess with status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 37
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.api_Call_got_sucess_with_status_code(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "\"result.code\" in response body is \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"result.code\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"200\"",
+                  "offset": 34
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@deleteUser"
+          }
+        ]
+      }
+    ],
+    "name": "User SignUp Flow",
+    "description": "",
+    "id": "user-signup-flow",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/Features/UserSignup.feature",
+    "tags": []
+  }
+]
