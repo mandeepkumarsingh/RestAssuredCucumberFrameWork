@@ -12,7 +12,10 @@ import resources.TestDataBinder;
 import resources.Utils;
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
-
+/**
+ * @author mandeep
+ * 
+ * */
 
 public class StepDefinitions extends Utils {
 	RequestSpecification requestspecification;
@@ -74,11 +77,24 @@ public class StepDefinitions extends Utils {
 			System.out.println(requestspecification.log());
 		}
 	}
+	
+	@Given("Product id {string} and quantity {string} username {string} and PowerType as {string} leftbox {string} and left sph {string} and righttbox {string} and right sph {string} and User {string} and password {string}")
+	public void product_id_and_quantity_username_and_PowerType_as_leftbox_and_left_sph_and_righttbox_and_right_sph_and_User_and_password(String productId, String qty, String userName, String powerType, String left_box, String left_sph, String right_box, String right_sph, String Email, String Pass) {
+		String sessionId=Utils.userSession(Email, Pass);
+		int cartstatus = Utils.addCLProductToCart(productId, qty, userName, powerType, left_box, left_sph, right_box, right_sph, sessionId);
+		int addressStatus=addAddress(Email, "878787", "9999999999", "Haryana", sessionId);
+		if (sessionId!=null && cartstatus==200 &&addressStatus==200){
+			requestspecification=RestAssured.given().spec(Utils.requestSpecification()).header("x-session-token",sessionId).body(TestDataBinder.orderpaymentPayloads(getGlobalValue("ClientType")));
+			System.out.println(requestspecification.log());
+		}
+	}
+	
 	@Then("Print Orderid in the file {string}")
 	public void print_Orderid_in_the_file(String PowerType) {
 		String orderid= Utils.getResponseValue(response, "result.order.id");
 		Utils.writeInFile("Oeder id of"+PowerType+" "+orderid);
 		getlogger().info(" order writen  in file "+orderid);   
 	}
+	
 
 }

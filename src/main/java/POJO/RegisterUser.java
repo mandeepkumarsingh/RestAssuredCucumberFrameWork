@@ -1,5 +1,8 @@
 package POJO;
-
+/**
+ * @author mandeep
+ * 
+ * */
 public class RegisterUser {
 	private String referalCode;
 	private String firstName;

@@ -1,7 +1,10 @@
 package stepDefinitions;
 
 import io.cucumber.java.Before;
-
+/**
+ * @author mandeep
+ * 
+ * */
 public class Hooks {
 	@Before("@deleteUser")
 	public void beforeScenario(){

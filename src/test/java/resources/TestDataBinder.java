@@ -1,5 +1,9 @@
 package resources;
 
+import Lombok.CLAddToCart;
+import Lombok.CLAddToCart_Prescription;
+import Lombok.CLAddToCart_Prescription_Left;
+import Lombok.CLAddToCart_Prescription_Right;
 import POJO.AddAddress;
 import POJO.AddAddressData;
 import POJO.AuthenticateUser;
@@ -8,6 +12,12 @@ import POJO.OrderPaymentInfo;
 import POJO.PowerProductCart;
 import POJO.RegisterUser;
 
+
+/**
+ * @author mandeep
+ * 
+ * 
+ * */
 public class TestDataBinder {
 	/** request Payload  for register User*/
 	public static RegisterUser registerUserPayloads(String firstname,String lastName,String mobile){
@@ -73,5 +83,24 @@ public class TestDataBinder {
 			orderpayment.setPaymentInfo(paymentinfo);
 		}catch(Exception e){}
 		return orderpayment;
+	}
+	public static CLAddToCart ContactLensAddToCartPayloads
+	(String qty,String productId,String userName,String powerType,String left_box,String left_sph,String right_box,String right_sph) {
+		CLAddToCart cart=new CLAddToCart();
+		cart.setQuantity(qty);
+		cart.setProductId(productId);
+		CLAddToCart_Prescription prescription=new CLAddToCart_Prescription();
+		prescription.setUserName(userName);
+		prescription.setPowerType(powerType);
+		CLAddToCart_Prescription_Left left=new CLAddToCart_Prescription_Left();
+		left.setBoxes(left_box);
+		left.setSph(left_sph);
+		prescription.setLeft(left);
+		CLAddToCart_Prescription_Right right=new CLAddToCart_Prescription_Right();
+		right.setBoxes(right_box);
+		right.setSph(right_sph);
+		prescription.setRight(right);
+		cart.setPrescription(prescription);
+		return cart;		
 	}
 }

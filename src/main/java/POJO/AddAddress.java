@@ -1,5 +1,8 @@
 package POJO;
-
+/**
+ * @author mandeep
+ * 
+ * */
 public class AddAddress {
 	private AddAddressData address;
 

@@ -12,6 +12,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
+import Lombok.CLAddToCart;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
@@ -19,6 +20,10 @@ import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+
+/**
+ * @author mandeep
+ * */
 
 public class Utils {
 	public static Logger logger ;
@@ -129,6 +134,23 @@ public class Utils {
 		}
 		return statuscode;
 	}
+	
+	public static int  addCLProductToCart
+	(String productId , String qty,String userName,String powerType,String left_box,String left_sph,String right_box,String right_sph,String SessionId){
+		int statuscode = 0;
+		try{
+			ApiResources apiresource=ApiResources.valueOf("addtocart");
+			RequestSpecification reqest=RestAssured.given().spec(requestSpecification()).header("x-session-token",SessionId).
+					body(TestDataBinder.ContactLensAddToCartPayloads(qty, productId, userName, powerType, left_box, left_sph, right_box, right_sph));
+			Response res=reqest.when().post(apiresource.getResource()).then().extract().response();
+			String var=res.asString();
+			getlogger().info("Add To cart executed for product id "+productId+" with status code :" +res.getStatusCode()+"response :-"+var);
+			statuscode=res.getStatusCode();
+		}catch(Exception e){
+			getlogger().error("Exception occured while adding product into cart "+e);
+		}
+		return statuscode;
+	}
 	public static int addAddress(String Email,String postcode,String phoneNo,String state,String SessionId ){
 		int statuscode = 0;
 		try{
@@ -161,12 +183,13 @@ public class Utils {
 
 	public static void main(String args[]){
 		//		System.out.println(base64Code("Mandeep"));\
-		//		String s=userSession("lenskart.test52@gmail.com","valyoo123");
+	    //  	String s=userSession("lenskart.test52@gmail.com","valyoo123");
 		//		System.out.println(s);
 		//		addPowerProductToCart("single_vision","129078","59c24834e4b09bd3c4c8af50",s);
 		//		addAddress("lenskart.test52@gmail.com","121003","9999999999","Haryana",s);
 		//		writeInFile("Mandeep");
 		//		writeInFile("Kumar");
+		//     addCLProductToCart("38726","2","df","CONTACT_LENS","1","-0.50","1","-0.50",s);
 
 	}
 }

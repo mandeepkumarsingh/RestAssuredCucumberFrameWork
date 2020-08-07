@@ -1,5 +1,8 @@
 package POJO;
-
+/**
+ * @author mandeep
+ * 
+ * */
 public class OrderPayment {
 	private String device;
 	private OrderPaymentInfo  paymentInfo;

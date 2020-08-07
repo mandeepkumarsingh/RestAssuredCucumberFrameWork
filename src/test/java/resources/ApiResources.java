@@ -1,5 +1,7 @@
 package resources;
-
+/**
+ * @author mandeep
+ * */
 public  enum  ApiResources {
 
 	regiterapi("/v2/customers/register"),

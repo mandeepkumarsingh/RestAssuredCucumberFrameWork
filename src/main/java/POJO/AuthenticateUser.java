@@ -1,5 +1,8 @@
 package POJO;
-
+/**
+ * @author mandeep
+ * 
+ * */
 public class AuthenticateUser {
 	private String username;
 	private String password ;
